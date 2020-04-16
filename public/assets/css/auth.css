@@ -1,0 +1,212 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    margin-bottom: 3%;
+}
+
+div.container h1 {
+    font-family: "Gilroy Bold", sans-serif;
+    margin-bottom: 0;
+    color: #0c152e;
+}
+
+div.container .subtitle {
+    color: #0c152e;
+    font-family: "Basier Circle", "Basier Square", "Gilroy Medium", sans-serif;
+    opacity: .5;
+}
+
+div.form-container {
+    margin: 5% 0 2% 0;
+    height: 100px;
+}
+
+div.form-container .column, div.form-container .columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+div.form-container .one {
+    background: #fafafa;
+    align-items: center;
+}
+
+div.form-container div.four a {
+    height: 100%;
+    background: #0088ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+div.form-container div.four a:hover {
+    box-shadow: none;
+    background: rgba(0, 136, 255, .8);
+    border-color: rgba(0, 136, 255, .8);
+}
+
+.one a {
+    font-size: .9em;
+    color: #0c152e;
+}
+
+div.step * {
+    display: none;
+    flex-direction: column;
+}
+
+div.step * {
+    opacity: 1;
+}
+
+.step.show * {
+    display: flex;
+    animation-name: fadein;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.step.hide * {
+    animation-name: fadeout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+span.hide {
+    animation-name: fadeout;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+span.show {
+    animation-name: fadein;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+div.step label {
+    color: #0c152e;
+    font-family: "Gilroy Medium", sans-serif;
+    font-size: .9em;
+}
+
+div.step span {
+    font-size: .8em;
+    color: rgba(12, 21, 46, .5);
+}
+
+div.step input {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 2% 0 0 0;
+    font-size: 2em;
+    font-family: "Gilroy Bold", sans-serif;
+    color: rgba(12, 21, 46, .8);
+}
+
+div.step input::placeholder {
+    color: rgba(0, 0, 0, .3);
+}
+
+div#step_2 input {
+    letter-spacing: .1em;
+}
+
+span.copyright {
+    color: rgba(12, 21, 46, .5);
+    font-family: "Basier Circle", sans-serif;
+    font-weight: 900;
+    letter-spacing: .1em;
+    font-size: .8em;
+}
+
+h4 {
+    color: #0c152e;
+    font-family: "Gilroy Bold", sans-serif;
+    margin: 0;
+}
+
+div.msg-container {
+    display: none;
+}
+
+div.msg-container span {
+    font-family: "Gilroy Medium", sans-serif;
+    font-size: .9em;
+    color: #f3113b;
+}
+
+div.msg-container.show {
+    animation-name: bottomin;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+div.msg-container.hide {
+    animation-name: bottomout;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+
+/* Animations */
+
+@keyframes fadein {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+}
+
+@keyframes bottomin {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bottomout {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(30px);
+        opacity: 0;
+        display: none;
+    }
+}
