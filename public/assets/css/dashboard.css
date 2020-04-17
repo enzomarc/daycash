@@ -161,7 +161,7 @@ div.bets_amount div.bet_amount.selected {
     color: #fff;
 }
 
-div.modal div.modal_day {
+div.modal_day {
     display: flex;
     flex-direction: column;
     justify-content: center;

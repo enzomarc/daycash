@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="eight columns">
-            <button class="topup"><i class="fas fa-upload"></i> &nbsp;Recharger mon compte</button>
+            <button class="topup show-modal" data-modal="topup-modal"><i class="fas fa-upload"></i> &nbsp;Recharger mon compte</button>
             <i style="margin-right: .5%;" class="fas fa-coins"></i>
             <span class="points"></span>
 
