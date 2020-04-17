@@ -1,0 +1,156 @@
+body {
+    background: #fafafa;
+    overflow: hidden;
+}
+
+div.header {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.header div.navbar {
+    margin-top: 2%;
+    background: #0c152e;
+    color: #fff;
+    border-radius: 5px;
+    padding: .5% 1%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 20px #eee;
+}
+
+div.navbar div.columns {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+div.navbar div.eight {
+    justify-content: flex-end;
+}
+
+div.navbar img.logo {
+    height: 40px;
+}
+
+div.navbar img.avatar {
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+}
+
+div.navbar span.points {
+    margin-right: 2%;
+    font-family: "Gilroy Bold", sans-serif;
+    font-size: .9em;
+}
+
+div.navbar button.topup {
+    border: solid 1px transparent;
+    text-decoration: none;
+    font-size: .8em;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 8px;
+    color: #fff;
+    margin: 0 2% 0 0;
+    font-family: "Basier Circle", sans-serif;
+    line-height: normal;
+    transition: all .3s;
+}
+
+div.navbar button.topup:hover {
+    background: #4070f4;
+    border-color: #4070f4;
+    color: #fff;
+}
+
+div.menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    margin-top: .5%;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 1px 20px #eee;
+    color: #0c152e;
+    width: 10%;
+    right: 5%;
+    z-index: 1;
+}
+
+div.menu.show {
+    animation-name: fadein;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    display: flex;
+}
+
+div.menu.hide {
+    animation-name: fadeout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    display: flex;
+}
+
+div.menu span.username {
+    font-family: "Gilroy Bold", sans-serif;
+    font-size: 1.2em;
+}
+
+div.menu span.phone {
+    font-family: "Basier Circle", sans-serif;
+    font-size: .8em;
+    opacity: .6;
+    margin-bottom: 1rem;
+}
+
+div.menu a {
+    color: #0c152e;
+    font-size: 1em;
+    margin-top: 1rem;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+div.menu a:hover {
+    color: #061748;
+}
+
+div.menu a i {
+    margin-right: 10px;
+}
+
+div.content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+/* Animations */
+
+@keyframes fadein {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}

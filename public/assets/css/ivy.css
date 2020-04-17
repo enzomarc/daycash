@@ -196,10 +196,9 @@ input[type="reset"],
 input[type="button"] {
     display: inline-block;
     padding: 0 30px;
-    color: #ecf0f4;
+    color: #0c152e;
     text-align: center;
-    font-family: "Gilroy", sans-serif;
-    font-weight: 600;
+    font-family: "Basier Circle", sans-serif;
     font-size: 12px;
     line-height: 38px;
     letter-spacing: .1rem;
@@ -207,7 +206,7 @@ input[type="button"] {
     white-space: nowrap;
     background: transparent;
     border-radius: 3px;
-    border: solid 1px rgba(255, 255, 255, .2);
+    border: solid 1px rgba(12, 21, 46, .2);
     cursor: pointer;
     box-sizing: border-box;
     transition: all .3s; }
@@ -250,8 +249,8 @@ input[type="submit"].button-success,
 input[type="reset"].button-success,
 input[type="button"].button-success {
     color: #fff;
-    background: linear-gradient(360deg, #07c25f, #39ce7f);
-    border-color: #07c25f; }
+    background: #2ab968;
+    border-color: #2ab968; }
 .button.button-warning,
 button.button-warning,
 input[type="submit"].button-warning,

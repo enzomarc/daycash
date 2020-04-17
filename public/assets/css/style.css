@@ -65,3 +65,132 @@ a {
 body {
     overflow-x: hidden;
 }
+
+
+/* Modals */
+
+div.modal_container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    z-index: 10;
+}
+
+div.modal_container.visible {
+    animation-name: modalfadein;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    display: flex;
+}
+
+div.modal_container.hidden {
+    animation-name: modalfadeout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+div.modal_container.visible div.modal {
+    animation-name: modalslidein;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+div.modal_container.hidden div.modal {
+    animation-name: modalslideout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+div.modal_container div.modal {
+    background: #fff;
+    border-radius: 3px;
+    width: 30%;
+    box-shadow: 0 1px 10px #666;
+}
+
+div.modal form {
+    margin: 0;
+}
+
+div.modal div.modal_header {
+    border-bottom: solid 1px #eee;
+}
+
+div.modal_header h5 {
+    color: #0c152e;
+    font-family: "Gilroy Bold", sans-serif;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+div.modal div.modal_header, div.modal div.modal_body, div.modal div.modal_footer {
+    padding: 3%;
+}
+
+div.modal div.modal_footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: solid 1px #eee;
+}
+
+div.modal_footer button, div.modal_footer a {
+    margin: 0 0 0 2%;
+}
+
+div.modal_footer .dismiss-modal:hover {
+    border-color: rgba(12, 21, 46, 1);
+    color: #0c152e;
+}
+
+
+/* Animations */
+
+@keyframes modalfadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalslidein {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes modalfadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modalslideout {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}

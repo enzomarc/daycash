@@ -1,11 +1,12 @@
 /* Vars */
 
 const API_ENDPOINT = "http://localhost:3000/api";
+let canBet = true;
 
 
 
 
-/* Functions */
+/* Misc Functions */
 
 function changeButtonText(text) {
     const span = $('span.text');
@@ -66,7 +67,7 @@ function logout() {
 }
 
 function checkAuth() {
-    if (sessionStorage.getItem('user') == null || sessionStorage.getItem('acc_token') == null) {
+    if (sessionStorage.getItem('user') == null || sessionStorage.getItem('acc_token') == null || sessionStorage.getItem('user') == "undefined" || sessionStorage.getItem('acc_token') == "undefined") {
         logout();
     } else {
         const logged_phone = JSON.parse(sessionStorage.getItem('user')).phone;
@@ -76,9 +77,49 @@ function checkAuth() {
             url: API_ENDPOINT + '/check',
             method: 'GET',
             data: { acc_token: token, phone: logged_phone },
+            success: (response) => {
+                authenticate(response);
+            },
             error: () => {
                 logout();
             }
         });
     }
 }
+
+function lockBets() {
+    canBet = false;
+    const days = $('div.day');
+
+    for (let day of days) {
+        if (!$(day).hasClass('active'))
+            $(day).addClass('locked').removeClass('active');
+        else
+            $(day).addClass('locked');
+    }
+}
+
+
+/* Modals */
+
+function showModal(selector) {
+    $(selector).removeClass('hidden').addClass('visible').show();
+}
+
+function hideModal(selector) {
+    $(selector).addClass('hidden');
+
+    setTimeout(() => {
+        $(selector).removeClass('visible').hide();
+    }, 500);
+}
+
+$('.show-modal').click(function () {
+    const modal = $(this)[0].dataset['modal'];
+    showModal('#' + modal);
+});
+
+$('.dismiss-modal').click(function () {
+    const modal = $(this)[0].dataset['modal'];
+    hideModal('#' + modal);
+});

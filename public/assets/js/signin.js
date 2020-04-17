@@ -51,6 +51,7 @@ $('a#send-btn').click(function () {
                 success: (response) => {
                     authenticate(response);
 
+                    checkAuth();
                     window.location.replace('/dashboard');
                 },
                 error: (response) => {
